@@ -1,0 +1,8 @@
+neo4j
+pandas
+xlrd
+openpyxl
+sentence-transformers
+torch
+streamlit
+numpy
