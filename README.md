@@ -16,7 +16,7 @@ The system enables intelligent cloud cost analysis for AWS and Azure billing dat
 
 ## 🏗 System Architecture
 
-Excel Billing Data (AWS / Azure)
+##Excel Billing Data (AWS / Azure)
 ↓
 Ontology Mapping (FOCUS 1.0 Spec)
 ↓
