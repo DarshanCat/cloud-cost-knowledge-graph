@@ -1,33 +1,36 @@
 import streamlit as st
-from hybrid_query import find_best_service, get_cost_data
+from rag_v2 import run_rag
 
 st.set_page_config(page_title="Cloud Cost Knowledge Graph Assistant", layout="centered")
 
-st.title("☁️ Cloud Cost Knowledge Graph Assistant")
+st.title("☁️ Cloud Cost Intelligence Assistant (Hybrid RAG v2)")
 
-st.markdown("Ask natural language questions about your AWS/Azure cloud spend.")
+st.markdown("""
+Ask advanced natural language questions about:
 
-query = st.text_input("Ask about cloud cost:")
+- AWS vs Azure comparison
+- Storage / Compute cost
+- Ranking of services
+- Commitment / Allocation analysis
+""")
+
+query = st.text_input("Ask your cloud cost question:")
 
 if st.button("Analyze"):
 
     if not query.strip():
         st.warning("Please enter a question.")
     else:
-        best_service = find_best_service(query)
-        data = get_cost_data(best_service)
+        result = run_rag(query)
 
-        if data:
-            total_cost = data['total_cost']
-            records = data['records']
+        st.markdown("### 🔍 Detected Intent")
+        st.write(result["intent"])
 
-            st.success(f"Most Relevant Service Identified: {best_service}")
+        st.markdown("### 🏷 Extracted Entities")
+        st.json(result["entities"])
 
-            st.markdown("### 💰 Cost Analysis Result")
-            st.write(
-                f"The total cost for **{best_service}** is "
-                f"**${total_cost}**, calculated from **{records} billing records**."
-            )
+        st.markdown("### 🧠 Semantic Service Matches")
+        st.write(result["services"])
 
-        else:
-            st.error("No data found for this query.")
+        st.markdown("### 📊 Final Analysis")
+        st.text(result["response"])
