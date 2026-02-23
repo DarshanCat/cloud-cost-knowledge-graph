@@ -73,3 +73,110 @@ Extract:
 
 ### Step 3 — Semantic Retrieval
 Uses:
+to embed service nodes and perform similarity search.
+
+### Step 4 — Graph Reasoning
+Multi-hop traversal:
+
+Concept-aware expansion:
+- Storage → blob, disk, backup, file
+- Compute → VM, instance, virtual
+
+### Step 5 — Structured Response
+- Vendor-level aggregation
+- Service-level breakdown
+- Cost difference calculation
+
+### Step 6 — Optional LLM Layer
+Context-aware explanation generation.
+(Disabled automatically if API quota unavailable.)
+
+---
+
+## 💻 User Interface
+
+Built using **Streamlit**.
+
+Features:
+- Natural language query input
+- Intent detection display
+- Extracted entity visualization
+- Semantic match preview
+- Structured reasoning output
+
+Run locally:
+
+```bash
+streamlit run app.py
+
+Concept-aware keyword expansion:
+
+Storage → blob, disk, file, backup  
+Compute → vm, instance, virtual  
+
+Enables semantic category reasoning.
+
+---
+
+### Step 5 — Structured Analytical Response
+
+Provides:
+
+- Vendor-level totals
+- Service-level breakdown
+- Cost difference calculation
+- Ranking output (if applicable)
+
+Example Output:
+
+Concept-aware keyword expansion:
+
+Storage → blob, disk, file, backup  
+Compute → vm, instance, virtual  
+
+Enables semantic category reasoning.
+
+---
+
+### Step 5 — Structured Analytical Response
+
+Provides:
+
+- Vendor-level totals
+- Service-level breakdown
+- Cost difference calculation
+- Ranking output (if applicable)
+
+Example Output:
+
+---
+
+### Step 6 — Optional LLM Layer
+
+LLM is integrated for:
+
+- Analytical summary
+- Vendor comparison explanation
+- Business insight generation
+
+If API quota is unavailable, system gracefully falls back to structured reasoning.
+
+---
+
+## 💻 User Interface (Streamlit)
+
+Interactive UI built using Streamlit.
+
+Displays:
+
+- Detected intent
+- Extracted entities
+- Semantic matches
+- Final structured reasoning
+- Optional LLM analysis
+
+Run locally:
+
+```bash
+streamlit run app.py
+
